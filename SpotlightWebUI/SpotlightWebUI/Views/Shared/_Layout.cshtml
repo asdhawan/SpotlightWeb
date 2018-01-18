@@ -4,12 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Spotlight Entertainment
+        Spotlight Entertainment Services
     </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        * {
+            font-family: Georgia, Times, "Times New Roman", serif !important;
+        }
+        body {
+            background-image: url('../../Content/images/darkwhiteleathertile.png');
+        }
+
+        .body-content {
+            z-index: 1;
+            box-shadow: 0px 0px 10px grey;
+            background-color: black;
+            opacity: 0.85;
+            color: white;
+        }
+
+        div#overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('../../Content/images/spotlightslanted.svg');
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
+    <div id="overlay"></div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -18,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Spotlight Entertainment", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Spotlight Entertainment Services", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -35,7 +62,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Spotlight Entertainment Services</p>
         </footer>
     </div>
 
