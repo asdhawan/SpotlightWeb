@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .well {
+        color: #000;
+        font-size: 1.25em;
+    }
+
+        .well a {
+            color: #000;
+        }
+
+    .well-alt {
+        border-color: rgb(79, 81, 82);
+        background-color: rgb(71, 73, 73);
+        color: #fff;
+    }
+
+        .well-alt a {
+            color: #fff;
+        }
+
+    .heading {
+        font-family: 'Abril Fatface', cursive !important;
+    }
+
+    div#videoBox {
+        width: 100%;
+    }
+
+    .text-bold {
+        font-weight: bolder;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('video').on('click', function () {
+            this.muted = !this.muted;
+        });
+    });
+    $('#videoBox').on("click", function (e) {
+        if (this.muted) {
+            this.muted = false;
+        }
+        else {
+            this.muted = true;
+        }
+    });
+</script>
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="heading h2">Video Booths</div>
+            Video Booths are a great way to allow your guest to send a congratulatory video on your nuptials, or to say happy birthday. Weather you're having an event, or celebrating a union, video booths are the best way to send your very best.
+            <strong><a class="text-bold" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book your next event.
+        </div>
+        <div class="col-lg-8">
+            <div id="videoBox">
+                <video controls src="~/Content/videos/videobooth.mp4" width="100%" autoplay muted></video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="well well-sm well-alt">
+    <div class="row">
+        <div class="col-lg-8">
+            <div id="videoBox">
+                <video controls src="~/Content/videos/casinonights.mp4" width="100%" autoplay muted></video>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="heading h2">Casino Nights</div>
+            Casino tables, poker, blackjack, roulette, we have it all.
+            <strong><a class="text-bold" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book a Casino Night event at a location of your choosing.
+        </div>
+    </div>
+</div>
