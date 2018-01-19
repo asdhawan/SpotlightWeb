@@ -3,16 +3,35 @@
 }
 <style type="text/css">
     .jumbotron {
-        color: #008080;
+        color: #000;
+        font-family: 'Kavoon', cursive;
     }
+
+        .jumbotron .btn {
+            padding: 2px 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .jumbotron .serviceLink {
+            font-size: 1.25em;
+        }
 </style>
 <div class="jumbotron">
     <h1>Spotlight Entertainment Services</h1>
-    <p class="lead">Providing poker, party and photography services</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p class="lead">
+        When your event has to be the best, call Spotlight E.S. We bring events to life and capture your memories through video and sound.
+        We specialize in
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "PhotoBooth" })">Photo Booth Fun</a></strong> and entertainment such as
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "CasinoNights" })">Casino Nights</a></strong>,
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "Videography" })">Videography</a></strong>,
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "DJ" })">DJ Services</a></strong> and many more.
+        <strong><a class="text-info" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book your next event.
+    </p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg pull-right">Learn more &raquo;</a></p>
 </div>
 
-<div class="row">
+<div class="row" hidden>
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>

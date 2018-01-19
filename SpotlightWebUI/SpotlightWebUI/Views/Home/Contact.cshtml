@@ -1,17 +1,250 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model SpotlightWebUI.Models.ContactForm
+
+@{
+    ViewBag.Title = "Contact Us";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<style type="text/css">
+    .input-group .form-control.input-validation-error {
+        background-color: #f2dede;
+    }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    .input-group .alert {
+        padding: 0;
+        border: none;
+    }
+
+        .input-group .alert.field-validation-error {
+            border: 1px solid #ebccd1;
+            position: absolute;
+            bottom: -19px;
+            right: 0;
+            margin-top: 30px;
+            font-size: 1rem;
+            z-index: 2;
+            padding: 0 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            font-weight: bold;
+            bottom: -34px;
+            line-height: 1.3em;
+        }
+
+        .well {
+            opacity: 1;
+        }
+</style>
+
+<h2>@ViewBag.Title</h2>
+<h3>Spotlight Entertainment Services</h3>
+
+<div class="row">
+    <div class="col-lg-4 text-center" ">
+        <div class="center-block well well-sm">
+            <address class="text-primary">
+                <a class="" target="_blank" href="https://www.google.com/maps/dir/235+Grand+Prix+Ave,+Manteca,+CA+95337">
+                    235 Grand Prix Ave<br />
+                    Manteca, California 95337
+                </a><br />
+                <i class="fa fa-phone"></i> <a href="tel:+12098588219">(209) 858-8219</a>
+                <br />
+                <i class="fa fa-envelope"></i> <a href="mailto:#">contact@spotlightentertain.com</a>
+                <br />
+            </address>
+            <a href="https://www.facebook.com/Spotlight-Entertainment-Services-319479885232657" target="_blank" class="btn btn-lg btn-default"><img src="~/Content/images/FB-FindUsonFacebook-online-144.png" /></a>
+        </div>
+    </div>
+    <div class="col-lg-8 text-center">
+        <div class="center-block well well-sm form-horizontal">
+            @using (Html.BeginForm("Index", "Login", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post)) {
+                @Html.AntiForgeryToken()
+
+                @*@Html.HiddenFor(model => model.ReturnUrl);*@
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">@Html.LabelFor(model => model.FirstName)</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">@Html.LabelFor(model => model.LastName)</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">@Html.LabelFor(model => model.EmailAddress)</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Mail Address" } })
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">@Html.LabelFor(model => model.PhoneNumber)</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "(845) 555-1212" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">Address</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="address" placeholder="Address" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">City</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="city" placeholder="city" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">State</label>
+                    <div class="col-md-8 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select name="state" class="form-control selectpicker">
+                                <option value=" ">Please select your state</option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>District of Columbia</option>
+                                <option> Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>daho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option> Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option> Mass</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option> Uttah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">Zip Code</label>
+                    <div class="col-md-6 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="zip" placeholder="Zip Code" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- radio checks -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">What services are you interested in?</label>
+                    <div class="col-md-6 text-primary">
+                        <input type="checkbox" name="hosting" value="PhotoBoothFun" /> Photo Booth Fun
+                        <input type="checkbox" name="hosting" value="CasinoNights" /> Casino Nights
+                        <br />
+                        <input type="checkbox" name="hosting" value="Videography" /> Videography
+                        <input type="checkbox" name="hosting" value="DJServices" /> DJ Services
+                    </div>
+                </div>
+
+                <!-- Text area -->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label text-primary">Message</label>
+                    <div class="col-md-6 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Message" } })
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success message -->
+                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

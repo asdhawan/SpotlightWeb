@@ -173,10 +173,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,9 +186,22 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-black.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-bold.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-dashed.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-italic.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-regular.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-light.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-regular.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.svg" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans.css" />
+    <Content Include="Content\gallery\videos\1.mp4" />
+    <Content Include="Content\gallery\videos\2.mp4" />
     <Content Include="Content\images\bgtile.png" />
     <Content Include="Content\images\darkwhiteleathertile.png" />
     <Content Include="Content\images\FB-FindUsonFacebook-online-144.png" />
+    <Content Include="Content\images\spotlightbg.jpg" />
+    <Content Include="Content\images\spotlightlogo.png" />
     <Content Include="Content\images\spotlightslanted.svg" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -211,6 +226,30 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-black.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-black.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-black.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-bold.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-bold.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-bold.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-dashed.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-dashed.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-dashed.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-italic.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-italic.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-italic.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-regular.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-regular.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-inline-regular.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-light.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-light.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-light.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-regular.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-regular.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-regular.woff" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.eot" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.ttf" />
+    <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.woff" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -242,10 +281,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
