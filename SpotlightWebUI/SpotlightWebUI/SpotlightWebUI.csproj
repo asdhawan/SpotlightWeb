@@ -175,11 +175,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\ImageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,8 +198,8 @@
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans-regular.svg" />
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.svg" />
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans.css" />
-    <Content Include="Content\gallery\videos\1.mp4" />
-    <Content Include="Content\gallery\videos\2.mp4" />
+    <Content Include="Content\gallery\images\DUMMY_FILE_DO_NOT_DELETE.txt" />
+    <Content Include="Content\gallery\videos\DUMMY_FILE_DO_NOT_DELETE.txt" />
     <Content Include="Content\images\bgtile.png" />
     <Content Include="Content\images\darkwhiteleathertile.png" />
     <Content Include="Content\images\FB-FindUsonFacebook-online-144.png" />

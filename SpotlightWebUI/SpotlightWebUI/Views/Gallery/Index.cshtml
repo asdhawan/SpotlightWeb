@@ -37,39 +37,42 @@
         }
     }
 </style>
-<div class="row">
-    <div class="column">
-        <img src="wedding.jpg">
-        <img src="rocks.jpg">
-        <img src="falls2.jpg">
-        <img src="paris.jpg">
-        <img src="nature.jpg">
-        <img src="mist.jpg">
-        <img src="paris.jpg">
-    </div>
-    <div class="column">
-        <img src="underwater.jpg">
-        <img src="ocean.jpg">
-        <img src="wedding.jpg">
-        <img src="mountainskies.jpg">
-        <img src="rocks.jpg">
-        <img src="underwater.jpg">
-    </div>
-    <div class="column">
-        <img src="wedding.jpg">
-        <img src="rocks.jpg">
-        <img src="falls2.jpg">
-        <img src="paris.jpg">
-        <img src="nature.jpg">
-        <img src="mist.jpg">
-        <img src="paris.jpg">
-    </div>
-    <div class="column">
-        <img src="underwater.jpg">
-        <img src="ocean.jpg">
-        <img src="wedding.jpg">
-        <img src="mountainskies.jpg">
-        <img src="rocks.jpg">
-        <img src="underwater.jpg">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#imageGallery').empty();
+        $('#imgRow').hide();
+        $('#imgItem').hide();
+        $.getJSON("/api/images")
+            .done(function (data) {
+                var imgCount = 0;
+                var imgRowIdx = 0;
+                var imgRow;
+                $.each(data, function (key, item) {
+                    if (imgCount % 3 == 0) {
+                        imgRow = $('#imgRow').clone().show();
+                        $('#imageGallery').append(imgRow);
+                    }
+                    imgCount++;
+                    var imgItem = $('#imgItem').clone().show();
+                    imgItem.find('#imgLink')[0].href = item.ImagePath;
+                    imgItem.find('#imgThumb')[0].src = item.ImagePath;
+                    imgItem.find('#caption').text(item.ImageCaption);
+                    imgRow.append(imgItem);
+                });
+            });
+    });
+</script>
+<div id="imageGallery">
+</div>
+<div id="imgRow" class="row">
+</div>
+<div id="imgItem" class="col-md-4">
+    <div class="thumbnail">
+        <a id="imgLink" href="">
+            <img id="imgThumb" src="" alt="" style="width:100%">
+            <div class="caption">
+                <p id="caption"></p>
+            </div>
+        </a>
     </div>
 </div>
