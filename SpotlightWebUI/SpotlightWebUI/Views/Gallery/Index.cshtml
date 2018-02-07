@@ -49,14 +49,15 @@
                 var imgRow;
                 $.each(data, function (key, item) {
                     if (imgCount % 3 == 0) {
-                        imgRow = $('#imgRow').clone().show();
+                        imgRowIdx++;
+                        imgRow = $('#imgRow').clone().attr('id', 'imgRow' + imgRowIdx).show();
                         $('#imageGallery').append(imgRow);
                     }
                     imgCount++;
                     var imgItem = $('#imgItem').clone().show();
                     imgItem.find('#imgLink')[0].href = item.ImagePath;
                     imgItem.find('#imgThumb')[0].src = item.ImagePath;
-                    imgItem.find('#caption').text(item.ImageCaption);
+                    //imgItem.find('#caption').text(item.ImageCaption);
                     imgRow.append(imgItem);
                 });
             });
@@ -70,9 +71,9 @@
     <div class="thumbnail">
         <a id="imgLink" href="">
             <img id="imgThumb" src="" alt="" style="width:100%">
-            <div class="caption">
+            @*<div class="caption">
                 <p id="caption"></p>
-            </div>
+            </div>*@
         </a>
     </div>
 </div>

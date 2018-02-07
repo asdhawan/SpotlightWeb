@@ -19,33 +19,11 @@
     <p class="lead">
         When your event has to be the best, call Spotlight E.S. We bring events to life and capture your memories through video and sound.
         We specialize in
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "PhotoBooth" })">Photo Booth Fun</a></strong> and entertainment such as
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "CasinoNights" })">Casino Nights</a></strong>,
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "Videography" })">Videography</a></strong>,
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services", new { id = "DJ" })">DJ Services</a></strong> and many more.
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#photoBooths">Photo Booth Fun</a></strong> and entertainment such as
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#casinoNights">Casino Nights</a></strong>,
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#videography">Videography</a></strong>,
+        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#djServices">DJ Services</a></strong> and many more.
         <strong><a class="text-info" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book your next event.
     </p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg pull-right">Learn more &raquo;</a></p>
-</div>
-
-<div class="row" hidden>
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    <p><a href="@Url.Action("Index", "Services")" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
