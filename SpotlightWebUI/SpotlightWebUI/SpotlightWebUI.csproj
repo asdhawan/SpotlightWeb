@@ -205,7 +205,10 @@
     <Content Include="Content\gallery\videos\DUMMY_FILE_DO_NOT_DELETE.txt" />
     <Content Include="Content\images\bgtile.png" />
     <Content Include="Content\images\darkwhiteleathertile.png" />
+    <Content Include="Content\images\djservices.JPG" />
     <Content Include="Content\images\FB-FindUsonFacebook-online-144.png" />
+    <Content Include="Content\images\outdoormovies.JPG" />
+    <Content Include="Content\images\photobooth.jpg" />
     <Content Include="Content\images\spotlightbg.jpg" />
     <Content Include="Content\images\spotlightlogo.png" />
     <Content Include="Content\images\spotlightslanted.svg" />
@@ -258,6 +261,8 @@
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.eot" />
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.ttf" />
     <Content Include="Content\fonts\ostrich-sans\ostrich-sans-rounded.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\spotlightes.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
