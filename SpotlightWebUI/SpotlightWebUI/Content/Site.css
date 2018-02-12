@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }*/
+
+@font-face {
+    font-family: "Elephant";
+    src: url("fonts/ELEPHNT.TTF") format("truetype");
+}

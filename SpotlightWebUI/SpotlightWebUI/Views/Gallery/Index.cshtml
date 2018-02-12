@@ -36,6 +36,25 @@
             max-width: 100%;
         }
     }
+
+    div#imageGallery, div#videoGallery {
+        padding-top: 10px;
+        background-color: white;
+    }
+
+        div#imageGallery .row, div#videoGallery .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    .thumbnail {
+        background-color: black;
+    }
+
+    div#videoBox {
+        border: solid 5px black;
+        margin-bottom: 10px;
+    }
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -56,14 +75,54 @@
                     imgCount++;
                     var imgItem = $('#imgItem').clone().show();
                     imgItem.find('#imgLink')[0].href = item.ImagePath;
-                    imgItem.find('#imgThumb')[0].src = item.ImagePath;
+                    imgItem.find('#imgThumb')[0].src = item.ThumbnailPath;
                     //imgItem.find('#caption').text(item.ImageCaption);
                     imgRow.append(imgItem);
                 });
             });
+
+
+        $('#videoGallery').empty();
+        $('#videoRow').hide();
+        $('#videoItem').hide();
+        $.getJSON("/api/videos")
+            .done(function (data) {
+                var videoCount = 0;
+                var videoRowIdx = 0;
+                var videoRow;
+                $.each(data, function (key, item) {
+                    if (videoCount % 3 == 0) {
+                        videoRowIdx++;
+                        videoRow = $('#videoRow').clone().attr('id', 'videoRow' + videoRowIdx).show();
+                        $('#videoGallery').append(videoRow);
+                    }
+                    videoCount++;
+                    var videoItem = $('#videoItem').clone().show();
+                    videoItem.find('video')[0].src = item.VideoPath;
+                    videoRow.append(videoItem);
+                });
+            });
     });
 </script>
-<div id="imageGallery">
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#images" data-toggle="tab">Images</a>
+    </li>
+    <li>
+        <a href="#videos" data-toggle="tab">Videos</a>
+    </li>
+</ul>
+
+<div class="tab-content clearfix">
+    <div class="tab-pane active" id="images">
+        <div id="imageGallery">
+        </div>
+    </div>
+    <div class="tab-pane" id="videos">
+        <div id="videoGallery">
+        </div>
+    </div>
 </div>
 <div id="imgRow" class="row">
 </div>
@@ -71,9 +130,13 @@
     <div class="thumbnail">
         <a id="imgLink" href="">
             <img id="imgThumb" src="" alt="" style="width:100%">
-            @*<div class="caption">
-                <p id="caption"></p>
-            </div>*@
         </a>
+    </div>
+</div>
+<div id="videoRow" class="row">
+</div>
+<div id="videoItem" class="col-md-4">
+    <div id="videoBox">
+        <video controls src="" width="100%"></video>
     </div>
 </div>
