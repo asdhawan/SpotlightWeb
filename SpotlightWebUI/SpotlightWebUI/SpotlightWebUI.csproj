@@ -174,6 +174,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
@@ -182,6 +183,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\SitemapActionResult.cs" />
+    <Compile Include="Models\SitemapNode.cs" />
     <Compile Include="Models\VideoInfo.cs" />
     <Compile Include="Models\ImageInfo.cs" />
     <Compile Include="Models\Enums.cs" />
@@ -234,6 +237,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\spotlightes.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
