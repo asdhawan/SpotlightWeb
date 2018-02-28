@@ -1,5 +1,7 @@
-﻿using SpotlightWebUI.Models;
+﻿using Newtonsoft.Json.Linq;
+using SpotlightWebUI.Models;
 using System.Collections.Generic;
+using System.Net;
 using System.Web.Hosting;
 using System.Web.Mvc;
 
@@ -23,7 +25,7 @@ namespace SpotlightWebUI.Controllers {
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Contact(ContactForm cf) {
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid && ValidateReCaptcha()) {
                 string emailTo = System.Configuration.ConfigurationManager.AppSettings["ContactEmailAddress"];
                 string emailTemplatePath = HostingEnvironment.MapPath("~/Content/ContactEmailTemplate.html");
                 string emailTemplateText = System.IO.File.ReadAllText(emailTemplatePath);
@@ -47,6 +49,14 @@ namespace SpotlightWebUI.Controllers {
                 cf.SuccessYN = true;
             }
             return View(cf);
+        }
+
+        private bool ValidateReCaptcha() {
+            var response = Request["g-recaptcha-response"];
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", System.Configuration.ConfigurationManager.AppSettings["GoogleReCAPTCHASecretKey"], response));
+            var obj = JObject.Parse(result);
+            return (bool)obj.SelectToken("success");
         }
     }
 }

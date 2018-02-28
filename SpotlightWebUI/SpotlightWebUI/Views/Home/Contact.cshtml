@@ -34,6 +34,10 @@
     .well {
         opacity: 1;
     }
+
+    .g-recaptcha div {
+        margin: 0 auto;
+    }
 </style>
 
 <h2>@ViewBag.Title</h2>
@@ -140,7 +144,7 @@
                     <div class="col-md-8 col-sm-8 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            @Html.DropDownListFor(model => model.State, UIHelper.GetSelectListForEnum(typeof(SpotlightWebUI.Models.USState)), new { @class = "form-control" })                            
+                            @Html.DropDownListFor(model => model.State, UIHelper.GetSelectListForEnum(typeof(SpotlightWebUI.Models.USState)), new { @class = "form-control" })
                         </div>
                     </div>
                 </div>
@@ -184,6 +188,9 @@
                     </div>
                 </div>
 
+                <div class="g-recaptcha" data-sitekey="6LeNrEkUAAAAAKaDzZzFa95nEy0CMu_dCurPaRVd">
+                </div>
+
                 <!-- Success message -->
                 if (Model.SuccessYN) {
                     <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
@@ -192,7 +199,7 @@
                 <!-- Button -->
                 <div class="form-group">
                     <label class="col-md-4 col-sm-4 control-label"></label>
-                    <div class="col-md-4">                        
+                    <div class="col-md-4">
                         <button type="submit" class="btn btn-warning" formaction="Contact" formmethod="post">Send <span class="glyphicon glyphicon-send"></span></button>
                     </div>
                 </div>
@@ -201,3 +208,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
+    <script type="text/javascript">
+    </script>
+}
