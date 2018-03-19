@@ -55,6 +55,12 @@
         border: solid 5px black;
         margin-bottom: 10px;
     }
+
+    .tab-content {
+        border-left: solid 1px gainsboro;
+        border-right: solid 1px gainsboro;
+        border-bottom: solid 1px gainsboro;
+    }
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -105,38 +111,41 @@
     });
 </script>
 
-<ul class="nav nav-tabs">
-    <li class="active">
-        <a href="#images" data-toggle="tab">Images</a>
-    </li>
-    <li>
-        <a href="#videos" data-toggle="tab">Videos</a>
-    </li>
-</ul>
 
-<div class="tab-content clearfix">
-    <div class="tab-pane active" id="images">
-        <div id="imageGallery">
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#images" data-toggle="tab">Images</a>
+        </li>
+        <li>
+            <a href="#videos" data-toggle="tab">Videos</a>
+        </li>
+    </ul>
+
+    <div class="tab-content clearfix">
+        <div class="tab-pane active" id="images">
+            <div id="imageGallery">
+            </div>
+        </div>
+        <div class="tab-pane" id="videos">
+            <div id="videoGallery">
+            </div>
         </div>
     </div>
-    <div class="tab-pane" id="videos">
-        <div id="videoGallery">
+    <div id="imgRow" class="row">
+    </div>
+    <div id="imgItem" class="col-md-4">
+        <div class="thumbnail">
+            <a id="imgLink" href="">
+                <img id="imgThumb" src="" alt="" style="width:100%">
+            </a>
         </div>
     </div>
-</div>
-<div id="imgRow" class="row">
-</div>
-<div id="imgItem" class="col-md-4">
-    <div class="thumbnail">
-        <a id="imgLink" href="">
-            <img id="imgThumb" src="" alt="" style="width:100%">
-        </a>
+    <div id="videoRow" class="row">
     </div>
-</div>
-<div id="videoRow" class="row">
-</div>
-<div id="videoItem" class="col-md-4">
-    <div id="videoBox">
-        <video controls src="" width="100%"></video>
+    <div id="videoItem" class="col-md-4">
+        <div id="videoBox">
+            <video controls src="" width="100%"></video>
+        </div>
     </div>
 </div>

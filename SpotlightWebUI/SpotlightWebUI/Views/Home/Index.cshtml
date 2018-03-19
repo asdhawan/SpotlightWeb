@@ -17,17 +17,160 @@
             font-size: 1.2em;
             font-weight: bold;
         }
+
+    h1#title {
+        font-family: 'Elephant';
+        font-size: 2em;
+    }
+
+    div#myCarousel {
+    }
+
+        div#myCarousel img {
+            width: 100%;
+        }
+
+        div#myCarousel h4 {
+            font-family: 'Elephant';
+            font-size: 2em;
+        }
+
+        div#myCarousel .carousel-caption {
+            left: 70%;
+            top: 5%;
+            right: 5%;
+            text-shadow: none !important;
+            text-align: left;
+        }
+
+            div#myCarousel .carousel-caption .alert-info {
+                padding: 30px;
+                opacity: .90;
+            }
+
+                div#myCarousel .carousel-caption .alert-info .service-desc {
+                    font-family: 'Shrikhand', cursive;
+                    font-size: 1.5em;
+                }
+
+    .service-icon img {
+        max-height: 150px;
+        margin: 0 auto;
+    }
+
+    .service-icon h2 {
+        margin-top: 0;
+        font-family: 'Elephant';
+        font-size: 1.5em;
+    }
+
+    blockquote#quote {
+        font-family: 'Shrikhand', cursive;
+        font-size: 3em;
+        margin: 25px 100px;
+    }
 </style>
-<div class="jumbotron">
-    <h1>SPOTLIGHT ENTERTAINMENT SERVICES</h1>
-    <p class="lead">
-        When your event has to be the best, call Spotlight E.S. We bring events to life and capture your memories through video and sound.
-        We specialize in
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#photoBooths">Photo Booth Fun</a></strong> and entertainment such as
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#casinoNights">Casino Nights</a></strong>,
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#videography">Videography</a></strong>,
-        <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#djServices">DJ Services</a></strong> and many more.
-        <strong><a class="text-info" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book your next event.
-    </p>
-    <p><a href="@Url.Action("Index", "Services")" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div>
+    @*<p class="lead">
+            When your event has to be the best, call Spotlight E.S. We bring events to life and capture your memories through video and sound.
+            We specialize in
+            <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#photoBooths">Photo Booth Fun</a></strong> and entertainment such as
+            <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#casinoNights">Casino Nights</a></strong>,
+            <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#videography">Videography</a></strong>,
+            <strong><a class="text-info text-uppercase serviceLink" href="@Url.Action("Index", "Services")#djServices">DJ Services</a></strong> and many more.
+            <strong><a class="text-info" href="@Url.Action("Contact", "Home")">Contact Us</a></strong> to book your next event.
+        </p>
+        <p><a href="@Url.Action("Index", "Services")" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-wrap="true">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <a class="item active" href="@Url.Action("Index", "Services")#photoBooths">
+                <div class="carousel-caption">
+                    <div class="alert-info">
+                        <h4 class="text-uppercase">Photo Booths</h4>
+                        <span class="service-desc">Touch screen technology, lots of fun props, photo booth attendant, green screen, elegant back drops.</span>
+                    </div>
+                </div>
+                <img class="img-responsive" src="~/Content/images/photobooth.jpg" />
+            </a>
+            <a class="item" href="@Url.Action("Index", "Services")#casinoNights">
+                <div class="carousel-caption">
+                    <div class="alert-info">
+                        <h4 class="text-uppercase">Casino Nights</h4>
+                        <span class="service-desc">Casino tables including blackjack, poker and roulette. Lots of fun for everyone.</span>
+                    </div>
+                </div>
+                <img class="img-responsive" src="~/Content/images/casinonights.jpg" />
+            </a>
+            <a class="item" href="@Url.Action("Index", "Services")#outdoorMovies">
+                <div class="carousel-caption">
+                    <div class="alert-info">
+                        <h4 class="text-uppercase">Outdoor Movies</h4>
+                        <span class="service-desc">The excitement of a movie theater experience brought to your backyard.</span>
+                    </div>
+                </div>
+                <img class="img-responsive" src="~/Content/images/outdoormovies.jpg" />
+            </a>
+            <a class="item" href="@Url.Action("Index", "Services")#djServices">
+                <div class="carousel-caption">
+                    <div class="alert-info">
+                        <h4 class="text-uppercase">DJ Services</h4>
+                        <span class="service-desc">Mics, lapel Mics, lots of DJ lighting, fog machines, light towers and more.</span>
+                    </div>
+                </div>
+                <img class="img-responsive" src="~/Content/images/djServices.jpg" />
+            </a>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+    </div>
+    <div class="container">
+        <h1 id="title">SPOTLIGHT ENTERTAINMENT SERVICES</h1>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#videoBooths">
+                    <img class="img-responsive" src="~/Content/images/icon_videobooth.png" />
+                    <h2>Video Booths</h2>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#casinoNights">
+                    <img class="img-responsive" src="~/Content/images/icon_casinonights.png" />
+                    <h2>Casino Nights</h2>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#photoBooths">
+                    <img class="img-responsive" src="~/Content/images/icon_photobooth.png" />
+                    <h2>Photo Booth Fun</h2>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#outdoorMovies">
+                    <img class="img-responsive" src="~/Content/images/icon_outdoormovies.png" />
+                    <h2>Outdoor Movies</h2>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#djServices">
+                    <img class="img-responsive" src="~/Content/images/icon_djservices.png" />
+                    <h2>DJ Services</h2>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-4 text-center text-uppercase service-icon">
+                <a class="text-info" href="@Url.Action("Index", "Services")#videography">
+                    <img class="img-responsive" src="~/Content/images/icon_videography.png" />
+                    <h2>Videography</h2>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <blockquote id="quote" class="text-info">"When your event has to be the best, call Spotlight E.S. to bring events to life and capture your memories through video and sound."</blockquote>
+        </div>
+    </div>
 </div>

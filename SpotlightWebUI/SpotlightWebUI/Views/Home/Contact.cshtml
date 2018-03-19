@@ -38,173 +38,175 @@
     .g-recaptcha div {
         margin: 0 auto;
     }
+
+    h1#title {
+        font-family: 'Elephant';
+        font-size: 2em;
+    }
 </style>
 
-<h2>@ViewBag.Title</h2>
-<h3>Spotlight Entertainment Services</h3>
+<div class="container">
+    <h1 id="title">SPOTLIGHT ENTERTAINMENT SERVICES</h1>
 
-<div class="row">
-    <div class="col-lg-4 text-center">
-        <div class="center-block well well-sm">
-            <address class="text-primary">
-                <a class="" target="_blank" href="https://www.google.com/maps/dir/235+Grand+Prix+Ave,+Manteca,+CA+95337">
-                    235 Grand Prix Ave<br />
-                    Manteca, California 95337
-                </a><br />
-                <i class="fa fa-phone"></i> <a href="tel:+12098588219">(209) 858-8219</a>
-                <br />
-                <i class="fa fa-envelope"></i> <a href="mailto:@System.Configuration.ConfigurationManager.AppSettings["ContactEmailAddress"]">contact@spotlightes.com</a>
-                <br />
-            </address>
-            <a href="https://www.facebook.com/Spotlight-Entertainment-Services-319479885232657" target="_blank" class="btn btn-lg btn-default"><img src="~/Content/images/FB-FindUsonFacebook-online-144.png" /></a>
+    <div class="row">
+        <div class="col-lg-4 text-center">
+            <div class="center-block well well-sm">
+                <address class="text-primary">
+                    <i class="fa fa-phone"></i> <a href="tel:+12098588219">(209) 858-8219</a>
+                    <br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:@System.Configuration.ConfigurationManager.AppSettings["ContactEmailAddress"]">contact@spotlightes.com</a>
+                    <br />
+                </address>
+                <a href="https://www.facebook.com/Spotlight-Entertainment-Services-319479885232657" target="_blank" class="btn btn-lg btn-default"><img src="~/Content/images/FB-FindUsonFacebook-online-144.png" /></a>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-8 text-center">
-        <div class="center-block well well-sm form-horizontal">
-            @using (Html.BeginForm()) {
-                @Html.AntiForgeryToken()
+        <div class="col-lg-8 text-center">
+            <div class="center-block well well-sm form-horizontal">
+                @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
 
-                @*@Html.HiddenFor(model => model.ReturnUrl);*@
+                    @*@Html.HiddenFor(model => model.ReturnUrl);*@
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.FirstName)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.FirstName)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
+                    <!-- Text input-->
 
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.LastName)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.LastName)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.EmailAddress)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Mail Address" } })
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.EmailAddress)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "E-Mail Address" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- Text input-->
+                    <!-- Text input-->
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.PhoneNumber)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "(555) 444-7777" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.PhoneNumber)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "(555) 444-7777" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
+                    <!-- Text input-->
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.Address)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.Address)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
+                    <!-- Text input-->
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.City)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.City)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Select Basic -->
+                    <!-- Select Basic -->
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.State)</label>
-                    <div class="col-md-8 col-sm-8 selectContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            @Html.DropDownListFor(model => model.State, UIHelper.GetSelectListForEnum(typeof(SpotlightWebUI.Models.USState)), new { @class = "form-control" })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.State)</label>
+                        <div class="col-md-8 col-sm-8 selectContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                @Html.DropDownListFor(model => model.State, UIHelper.GetSelectListForEnum(typeof(SpotlightWebUI.Models.USState)), new { @class = "form-control" })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
+                    <!-- Text input-->
 
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.ZipCode)</label>
-                    <div class="col-md-4 col-sm-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zip Code" } })
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.ZipCode)</label>
+                        <div class="col-md-4 col-sm-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Zip Code" } })
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- radio checks -->
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">What services are you interested in?</label>
-                    <div class="col-md-8 col-sm-8 text-primary">
-                        @Html.CheckBoxFor(model => model.PhotoBoothsYN) @Html.LabelFor(model => model.PhotoBoothsYN)
-                        @Html.CheckBoxFor(model => model.VideoBoothsYN) @Html.LabelFor(model => model.VideoBoothsYN)
-                        <br />
-                        @Html.CheckBoxFor(model => model.CasinoNightsYN) @Html.LabelFor(model => model.CasinoNightsYN)
-                        @Html.CheckBoxFor(model => model.DJServicesYN) @Html.LabelFor(model => model.DJServicesYN)
-                        <br />
-                        @Html.CheckBoxFor(model => model.VideographyYN) @Html.LabelFor(model => model.VideographyYN)
-                        @Html.CheckBoxFor(model => model.OutdoorMoviesYN) @Html.LabelFor(model => model.OutdoorMoviesYN)
-                    </div>
-                </div>
-
-                <!-- Text area -->
-
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.Message)</label>
-                    <div class="col-md-8 col-sm-8 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Message" } })
+                    <!-- radio checks -->
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">What services are you interested in?</label>
+                        <div class="col-md-8 col-sm-8 text-primary">
+                            @Html.CheckBoxFor(model => model.PhotoBoothsYN) @Html.LabelFor(model => model.PhotoBoothsYN)
+                            @Html.CheckBoxFor(model => model.VideoBoothsYN) @Html.LabelFor(model => model.VideoBoothsYN)
+                            <br />
+                            @Html.CheckBoxFor(model => model.CasinoNightsYN) @Html.LabelFor(model => model.CasinoNightsYN)
+                            @Html.CheckBoxFor(model => model.DJServicesYN) @Html.LabelFor(model => model.DJServicesYN)
+                            <br />
+                            @Html.CheckBoxFor(model => model.VideographyYN) @Html.LabelFor(model => model.VideographyYN)
+                            @Html.CheckBoxFor(model => model.OutdoorMoviesYN) @Html.LabelFor(model => model.OutdoorMoviesYN)
                         </div>
                     </div>
-                </div>
 
-                <div class="g-recaptcha" data-sitekey="6LeNrEkUAAAAAKaDzZzFa95nEy0CMu_dCurPaRVd">
-                </div>
+                    <!-- Text area -->
 
-                <!-- Success message -->
-                if (Model.SuccessYN) {
-                    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label text-primary">@Html.LabelFor(model => model.Message)</label>
+                        <div class="col-md-8 col-sm-8 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Message" } })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LeNrEkUAAAAAKaDzZzFa95nEy0CMu_dCurPaRVd">
+                    </div>
+
+                    <!-- Success message -->
+                    if (Model.SuccessYN) {
+                        <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+                    }
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 col-sm-4 control-label"></label>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-warning" formaction="Contact" formmethod="post">Send <span class="glyphicon glyphicon-send"></span></button>
+                        </div>
+                    </div>
+
                 }
-
-                <!-- Button -->
-                <div class="form-group">
-                    <label class="col-md-4 col-sm-4 control-label"></label>
-                    <div class="col-md-4">
-                        <button type="submit" class="btn btn-warning" formaction="Contact" formmethod="post">Send <span class="glyphicon glyphicon-send"></span></button>
-                    </div>
-                </div>
-
-            }
+            </div>
         </div>
     </div>
 </div>

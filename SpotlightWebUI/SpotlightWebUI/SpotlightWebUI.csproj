@@ -200,9 +200,16 @@
     <Content Include="Content\gallery\images\DUMMY_FILE_DO_NOT_DELETE.txt" />
     <Content Include="Content\gallery\videos\DUMMY_FILE_DO_NOT_DELETE.txt" />
     <Content Include="Content\images\bgtile.png" />
+    <Content Include="Content\images\casinonights.JPG" />
     <Content Include="Content\images\darkwhiteleathertile.png" />
     <Content Include="Content\images\djservices.JPG" />
     <Content Include="Content\images\FB-FindUsonFacebook-online-144.png" />
+    <Content Include="Content\images\icon_casinonights.png" />
+    <Content Include="Content\images\icon_djservices.png" />
+    <Content Include="Content\images\icon_outdoormovies.png" />
+    <Content Include="Content\images\icon_photobooth.png" />
+    <Content Include="Content\images\icon_videobooth.png" />
+    <Content Include="Content\images\icon_videography.png" />
     <Content Include="Content\images\outdoormovies.JPG" />
     <Content Include="Content\images\photobooth.jpg" />
     <Content Include="Content\images\spotlightbg.jpg" />

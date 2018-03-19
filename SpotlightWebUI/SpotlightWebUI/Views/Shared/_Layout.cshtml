@@ -6,7 +6,7 @@
     <title>
         Spotlight Entertainment Services
     </title>
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto|Shrikhand" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -17,20 +17,20 @@
         }
 
         body {
-            background-image: url('../../Content/images/spotlightbg.jpg');
+            /*background-image: url('../../Content/images/spotlightbg.jpg');*/
             background-size: 100%;
             background-position-y: 0;
             background-repeat-y: no-repeat;
-            background-color: black;
+            background-color: white;
         }
 
         .body-content {
             z-index: 1;
-            box-shadow: 0px 3px 6px grey;
+            /*box-shadow: 0px 3px 6px grey;
             background-color: black;
             opacity: 0.95;
-            color: white;
-            padding-top: 15px;
+            color: white;*/
+            padding: 15px 0 15px 0;
         }
 
         div#overlay {
@@ -81,10 +81,10 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="text-center text-muted">
             <p>&copy; @DateTime.Now.Year - Spotlight Entertainment Services</p>
         </footer>
     </div>
