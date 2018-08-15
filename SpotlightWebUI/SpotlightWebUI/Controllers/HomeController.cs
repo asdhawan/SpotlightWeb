@@ -8,6 +8,7 @@ using System.Web.Mvc;
 namespace SpotlightWebUI.Controllers {
     public class HomeController : Controller {
         public ActionResult Index() {
+            CommonUtils.Logger.LogInfo("source", "hey");
             return View();
         }
 
