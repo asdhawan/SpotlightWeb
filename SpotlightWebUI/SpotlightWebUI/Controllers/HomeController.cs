@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using SpotlightWebUI.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -8,13 +9,11 @@ using System.Web.Mvc;
 namespace SpotlightWebUI.Controllers {
     public class HomeController : Controller {
         public ActionResult Index() {
-            CommonUtils.Logger.LogInfo("source", "hey");
             return View();
         }
 
         public ActionResult About() {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -27,7 +26,9 @@ namespace SpotlightWebUI.Controllers {
         [ValidateAntiForgeryToken]
         public ActionResult Contact(ContactForm cf) {
             if (ModelState.IsValid && ValidateReCaptcha()) {
+                string emailFrom = System.Configuration.ConfigurationManager.AppSettings["NoReplyFromAddress"];
                 string emailTo = System.Configuration.ConfigurationManager.AppSettings["ContactEmailAddress"];
+                string emailBcc = System.Configuration.ConfigurationManager.AppSettings["ContactBccEmailAddress"];
                 string emailTemplatePath = HostingEnvironment.MapPath("~/Content/ContactEmailTemplate.html");
                 string emailTemplateText = System.IO.File.ReadAllText(emailTemplatePath);
                 Dictionary<string, string> fieldValues = new Dictionary<string, string>();
@@ -46,7 +47,10 @@ namespace SpotlightWebUI.Controllers {
                     string searchString = string.Format("%%{0}%%", kvp.Key);
                     body = body.Replace(searchString, kvp.Value);
                 }
-                CommonUtils.Mailer.SendEmail(emailTo, new List<string>(), "New Contact from web-site", body);
+                List<string> bccList = new List<string>();
+                if (!string.IsNullOrEmpty(emailBcc))
+                    bccList = emailBcc.Split(',').ToList();
+                CommonUtils.Mailer.SendEmail(null, emailFrom, emailTo, null, bccList, "New Contact from web-site", body, null);
                 cf.SuccessYN = true;
             }
             return View(cf);

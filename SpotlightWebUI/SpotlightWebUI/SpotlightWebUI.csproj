@@ -211,6 +211,7 @@
     <Content Include="Content\images\icon_djservices.png" />
     <Content Include="Content\images\icon_outdoormovies.png" />
     <Content Include="Content\images\icon_photobooth.png" />
+    <Content Include="Content\images\icon_photography.png" />
     <Content Include="Content\images\icon_videobooth.png" />
     <Content Include="Content\images\icon_videography.png" />
     <Content Include="Content\images\outdoormovies.JPG" />
